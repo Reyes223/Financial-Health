@@ -32,8 +32,15 @@ function loadPage(page) {
 
 
 function loadPageAndHandleButtonClick(page, section, buttonId) {
-    loadPage(page);
+    var button = document.getElementById(buttonId);
+  if(!button.disabled)
+  {
     handleButtonClick(section, buttonId);
+    button.disabled = true;
+  }
+  loadPage(page);
+    
+    
 }
 
 var acc = document.getElementsByClassName("accordion");
