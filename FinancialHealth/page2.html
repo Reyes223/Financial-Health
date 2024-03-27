@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Health for Dummies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Financial Health for Dummies</h1>
+
+    <div class="button-container">
+        <button onclick="loadPage('page1.html')">Intro</button>
+        <button onclick="loadPage('page2.html')">Basic Information</button>
+        <button onclick="loadPage('page3.html')">Link to Finances</button>
+    </div>
+
+    <div id="content" class="lesson-content">
+        <!-- Basic Information section -->
+        <div class="basic-info">
+            <h2>Basic Information</h2>
+            <p>How To Build Credit.</p>
+            <ul>
+                <li>If this is your first card as an adult or young student; secured cards are a good first step</li>
+                <li>Try not to exceed your spending limit</li>
+                <li>Credit is NOT free money, everything you buy is owed back</li>
+                <li>Pay your credit bills in full every month</li>
+            </ul>
+            <p>How To Invest and Retire a Millionaire On A Student Budget. It isn't hedge funds that always have to win, compound interest is your friend</p>
+            <ul>
+                <li>For retirement your goal should be to max out your Roth IRA and 401(k) every year</li>
+                <li>If you can invest, sticking to long term stable options is your best bet!</li>
+                <li>Once you pick your stocks whether for retirement or general investing just leave it, that is all you have to do</li>
+                <li>Show potential total net worth if they followed all the steps</li>
+            </ul>
+            <p>What Do Student Loans Really Look Like?</p>
+            <ul>
+                <li>Show average student loan + interest</li>
+                <li>Input calculator for visual</li>
+                <!-- Inside the list item for "Input calculator for visual" -->
+                <li>
+                    <label for="principal">Principal:</label>
+                    <input type="number" id="principal" placeholder="Enter principal amount" />
+                    <br />
+                    <label for="rate">Rate:</label>
+                    <input type="number" id="rate" placeholder="Enter interest rate" />
+                    <br />
+                    <label for="time">Time:</label>
+                    <input type="number" id="time" placeholder="Enter time in years" />
+                    <br />
+                    <button onclick="calculateInterest()">Calculate</button>
+                    <p id="result"></p>
+                </li>
+
+                                <!-- Inside the list item for "Input calculator for visual" -->
+                <li>
+                    <label for="principal">Principal:</label>
+                    <input type="number" id="principal" placeholder="Enter principal amount" />
+                    <br />
+                    <label for="rate">Rate:</label>
+                    <input type="number" id="rate" placeholder="Enter interest rate" />
+                    <br />
+                    <label for="time">Time:</label>
+                    <input type="number" id="time" placeholder="Enter time in years" />
+                    <br />
+                    <button onclick="calculateInterest()">Calculate</button>
+                    <p id="result"></p>
+                    <canvas id="pieChart" width="400" height="400"></canvas>
+                </li>
+
+
+            </ul>
+            <p>Why have a 6 month emergency fund?</p>
+            <ul>
+                <li>Life can get hard sometimes and while investing is good having some cash on hand that could last you 6 months can make a big difference</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

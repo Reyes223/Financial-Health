@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHD App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Financial Health for Dummies</h1>
+    <div class="button-container">
+        <button onclick="loadPage('page1.html')">Intro</button>
+        <button onclick="loadPage('page2.html')">Basic Information</button>
+        <button onclick="loadPage('page3.html')">Link to Finances</button>
+    </div>
+    <h1>Retirement</h1>
+        <div class="button-container">
+        <button onclick="loadPage('page1.html')">401K</button>
+        <button onclick="loadPage('page2.html')">Roth IRA</button>
+        <button onclick="loadPage('page3.html')">ETFs</button>
+    </div>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+      <h1>Retirement</h1>
+          <div class="button-container">
+          <button onclick="loadPage('page1.html')">401K</button>
+          <button onclick="loadPage('page2.html')">Roth IRA</button>
+          <button onclick="loadPage('page3.html')">ETFs</button>
+      </div>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    <div id="content"></div>
+    <script src="renderer.js"></script>
+    
+</body>
+</html>

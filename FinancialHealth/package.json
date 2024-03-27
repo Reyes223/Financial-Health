@@ -1,0 +1,16 @@
+{
+  "name": "quixotic-sand-untidy-5ve04",
+  "productName": "quixotic-sand-untidy-5ve04",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "Jorge",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "15.5.5"
+  }
+}
