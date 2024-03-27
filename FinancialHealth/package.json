@@ -1,11 +1,11 @@
 {
-  "name": "quixotic-sand-untidy-5ve04",
-  "productName": "quixotic-sand-untidy-5ve04",
+  "name": "FinancialHealth",
+  "productName": "FinancialHealth",
   "description": "My Electron application description",
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
-  "author": "Jorge",
+  "author": "REYESMAJ",
   "scripts": {
     "start": "electron ."
   },

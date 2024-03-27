@@ -6,41 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FHD App</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for points counter */
+        #points {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Financial Health for Dummies</h1>
-    <div class="button-container">
-        <button onclick="loadPage('page1.html')">Intro</button>
-        <button onclick="loadPage('page2.html')">Basic Information</button>
-        <button onclick="loadPage('page3.html')">Link to Finances</button>
-    </div>
-    <h1>Retirement</h1>
-        <div class="button-container">
-        <button onclick="loadPage('page1.html')">401K</button>
-        <button onclick="loadPage('page2.html')">Roth IRA</button>
-        <button onclick="loadPage('page3.html')">ETFs</button>
-    </div>
-    <button class="accordion">Section 1</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
-    </div>
+    <h1>FH Official</h1>
+    <p>v0.0.1 beta</p>
 
-    <button class="accordion">Section 2</button>
-    <div class="panel">
-      <h1>Retirement</h1>
+    <!-- Points counter -->
+    <div id="points">Points: <span id="pointsCounter">0</span></div>
+
+    <button class="accordion" id="section1">Section 1: Beginner</button>
+    <div class="panel" id="panel1">
+      <h3>Why worry about finances?</h3>
           <div class="button-container">
-          <button onclick="loadPage('page1.html')">401K</button>
-          <button onclick="loadPage('page2.html')">Roth IRA</button>
-          <button onclick="loadPage('page3.html')">ETFs</button>
+          <button onclick="handleButtonClick('beginner', 'button1')" id="button1">Retirement</button>
+          <button onclick="handleButtonClick('beginner', 'button2')" id="button2">Emergencies</button>
+          <button onclick="handleButtonClick('beginner', 'button3')" id="button3">Quality of Life</button>
+      </div>
+    </div>
+    
+    <button class="accordion" id="section2" disabled>Section 2: Intermediate</button>
+    <div class="panel" id="panel2">
+      <h3>How to make the most out of your money?</h3>
+          <div class="button-container">
+          <button onclick="handleButtonClick('intermediate', 'button4')" id="button4">Budgeting</button>
+          <button onclick="handleButtonClick('intermediate', 'button5')" id="button5">Purchase Planning</button>
+          <button onclick="handleButtonClick('intermediate', 'button6')" id="button6">Credit</button>
       </div>
     </div>
 
-    <button class="accordion">Section 3</button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
-    </div>
+    <button class="accordion" id="section3" disabled>Section 3: Advanced</button>
+    <div class="panel" id="panel3">
+      <h3>How to make your money make you money?</h3>
+          <div class="button-container">
+          <button onclick="handleButtonClick('advanced', 'button7')" id="button7">Investing</button>
+          <button onclick="handleButtonClick('advanced', 'button8')" id="button8">HYSA</button>
+      </div>
+    </div>    
+
     <div id="content"></div>
     <script src="renderer.js"></script>
-    
+    <script>
+        function handleButtonClick(section, buttonId) {
+            var pointsCounter = document.getElementById('pointsCounter');
+            var currentPoints = parseInt(pointsCounter.textContent);
+            var pointsToAdd = 0;
+
+            // Determine points to add based on section
+            if (section === 'beginner') {
+                pointsToAdd = 5;
+            } else if (section === 'intermediate') {
+                pointsToAdd = 10;
+            } else if (section === 'advanced') {
+                pointsToAdd = 15;
+            }
+
+            // Add points and update counter
+            pointsCounter.textContent = currentPoints + pointsToAdd;
+        }
+    </script>
 </body>
 </html>

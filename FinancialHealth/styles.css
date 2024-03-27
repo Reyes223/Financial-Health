@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -9,21 +9,37 @@ h1 {
     text-align: center;
     color: #333;
     margin-top: 50px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: #2c3e50; /* Dark blue color */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color: #2c3e50; /* Dark blue color */
+    margin-bottom: 20px;
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    background-color: #2980b9; /* Blue color */
+    color: #fff;
+    padding: 12px 24px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     margin: 10px;
     font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #1f618d; /* Darker shade of blue */
 }
 
 #content {
@@ -35,51 +51,48 @@ button:hover {
     max-width: 600px;
 }
 
-h2 {
-    color: #333;
-}
-
-p {
-    color: #666;
-    line-height: 1.6;
-}
-
 .button-container {
     text-align: center;
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px;
 }
 
-button {
-    /* Your existing button styles */
-}
-
-/* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
+    background-color: #2980b9; /* Blue color */
+    color: #fff;
+    padding: 18px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: #ccc;
+.accordion:hover {
+    background-color: #1f618d; /* Darker shade of blue */
 }
 
-/* Style the accordion panel. Note: hidden by default */
+.active {
+    background-color: #1f618d; /* Darker shade of blue */
+}
+
 .panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
 }
 
-/* Styles for Basic Information section */
+.panel-content {
+    padding: 20px;
+}
+
 .basic-info {
     background-color: #f9f9f9;
     padding: 20px;
@@ -96,6 +109,7 @@ button {
 .basic-info p {
     color: #666;
     line-height: 1.6;
+    text-align: center;
 }
 
 .basic-info ul {
@@ -109,10 +123,33 @@ button {
 }
 
 .basic-info ul li::before {
-    content: "\2022"; /* Bullet character */
-    color: #4CAF50; /* Bullet color */
+    content: "\2022";
+    color: #4CAF50;
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+}
+
+/* Define styles for disabled buttons */
+button:disabled {
+    opacity: 0.6; /* Adjust opacity to make them appear grayed out */
+    cursor: not-allowed; /* Change cursor to indicate that the button is disabled */
+}
+
+/* Define styles for enabled buttons */
+button:not(:disabled) {
+    opacity: 1; /* Reset opacity for enabled buttons */
+    cursor: pointer; /* Reset cursor for enabled buttons */
+}
+
+/* Additional CSS for points counter */
+#points {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
 }

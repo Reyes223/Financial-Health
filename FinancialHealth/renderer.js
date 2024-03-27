@@ -77,3 +77,39 @@ function calculateInterest() {
     });
 }
 
+// Get all buttons and panels
+const buttons = document.querySelectorAll('.button-container button');
+const panels = document.querySelectorAll('.panel');
+
+// Initialize button counters
+let buttonCounter = 0;
+
+// Function to enable or disable buttons based on buttonCounter
+function updateButtonStatus() {
+    const section2Button = document.getElementById('section2');
+    const section3Button = document.getElementById('section3');
+
+    // Enable Section 2 button if all Section 1 buttons are clicked
+    if (buttonCounter >= 3) {
+        section2Button.disabled = false;
+    }
+
+    // Enable Section 3 button if all Section 2 buttons are clicked
+    if (buttonCounter >= 6) {
+        section3Button.disabled = false;
+    }
+}
+
+// Add event listeners to buttons to increment buttonCounter and call updateButtonStatus
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        buttonCounter++;
+        updateButtonStatus();
+    });
+});
+
+function handleButtonClick(buttonId) {
+    var pointsCounter = document.getElementById('pointsCounter');
+    var currentPoints = parseInt(pointsCounter.textContent);
+    pointsCounter.textContent = currentPoints + 5;
+}
