@@ -1,6 +1,26 @@
 
 src="https://cdn.jsdelivr.net/npm/chart.js"
 
+
+
+function handleButtonClick(section, buttonId) {
+    var pointsCounter = document.getElementById('pointsCounter');
+    var currentPoints = parseInt(pointsCounter.textContent);
+    var pointsToAdd = 0;
+
+    // Determine points to add based on section
+    if (section === 'beginner') {
+        pointsToAdd = 5;
+    } else if (section === 'intermediate') {
+        pointsToAdd = 10;
+    } else if (section === 'advanced') {
+        pointsToAdd = 15;
+    }
+
+    // Add points and update counter
+    pointsCounter.textContent = currentPoints + pointsToAdd;
+}
+
 function loadPage(page) {
     fetch(page)
         .then(response => response.text())
@@ -8,6 +28,12 @@ function loadPage(page) {
             document.getElementById('content').innerHTML = html;
         })
         .catch(error => console.error('Error loading page:', error));
+}
+
+
+function loadPageAndHandleButtonClick(page, section, buttonId) {
+    loadPage(page);
+    handleButtonClick(section, buttonId);
 }
 
 var acc = document.getElementsByClassName("accordion");
